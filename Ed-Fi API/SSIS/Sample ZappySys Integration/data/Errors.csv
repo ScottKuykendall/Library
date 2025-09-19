@@ -1,0 +1,2 @@
+ZS_JSON_OUT,ErrorCode,ErrorColumn,ErrorColumnName,ErrorMessage,json,errorMSG
+,-1,-1,,,{"SchoolId":"1234","nameOfInstitution":"Mike P Douglas School","shortNameOfInstitution":"Douglas School","gradeLevels":[{"gradeLevelDescriptor":"uri://ed-fi.org/GradeLevelDescriptor#Third grade"},{"gradeLevelDescriptor":"uri://ed-fi.org/GradeLevelDescriptor#Fourth grade"}],"educationOrganizationCategories":[{"educationOrganizationCategoryDescriptor":"uri://ed-fi.org/EducationOrganizationCategoryDescriptor#School"}]},Unable to connect to the remote server

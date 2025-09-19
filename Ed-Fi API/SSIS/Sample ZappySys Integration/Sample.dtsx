@@ -1,0 +1,1969 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/16/2025 11:19:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DOESISVDIAD009"
+  DTS:CreatorName="DOESIS\scott.kuykendall"
+  DTS:DTSID="{0A82F507-53C0-49A0-8E95-BD8A8E46C2BC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5223.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Sample"
+  DTS:PackageType="5"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{7552EDAA-E1A6-41A3-8C7B-B1CF82C3D379}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EducationOrgCategory]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{05034814-A0B1-481F-B3AC-6D6414101111}"
+      DTS:ObjectName="EducationOrgCategory">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\Library\Ed-Fi API\SSIS\Sample ZappySys Integration\data\SchoolEducationOrganizationCategory.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SchoolId"
+              DTS:DTSID="{59308DCE-A3AF-42D6-A618-3F83D710E817}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="educationOrganizationCategoryDescriptor"
+              DTS:DTSID="{23BF41C5-E347-4ED0-98D6-89A2EAC97989}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="namespace"
+              DTS:DTSID="{ECF63425-E8BF-42E0-9C14-9306C2B2BABB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ErrorFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E8E6AD0D-A191-4721-8F85-A6C402571EBC}"
+      DTS:ObjectName="ErrorFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\Library\Ed-Fi API\SSIS\Sample ZappySys Integration\data\Errors.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ZS_JSON_OUT"
+              DTS:DTSID="{F7AA29A7-BF51-4A60-AEA0-8413271D399A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{64E19C94-136F-46CC-B123-4AB8D004C464}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{10B2E567-9244-4BF3-8478-EA69EC9BCE0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumnName"
+              DTS:DTSID="{AEE89013-6C8F-4D0C-8BDB-218C290B0AEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorMessage"
+              DTS:DTSID="{CB0DE04B-31F4-4F02-BC57-D3F0C26E6537}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2048"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="json"
+              DTS:DTSID="{39207F87-929D-4AF0-BD74-583C80496F12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="2048"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="errorMSG"
+              DTS:DTSID="{FEC2840A-7E5F-4CB3-A25A-99AB1515E739}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAuth 1]"
+      DTS:CreationName="ZS-OAUTH"
+      DTS:DTSID="{BBF8C3F6-641B-47D4-B85B-8CA3A155ABCE}"
+      DTS:ObjectName="OAuth 1">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="Provider=Custom;OAuthVersion=OAuth2;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;EnableCodeVerifier=False;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=ClientCredentials;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=True;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=application/x-www-form-urlencoded;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=http://localhost:54746/oauth/token;TokenUrl=http://localhost:54746/oauth/token;RequestTokenUrl=;ClientId=v4NVndhKABHxpolZr35gs;Scope=;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;ConnectionStringFile=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False;MetaMethod=;MetaUrl=;MetaBody=;MetaHeaders=;MetaTemplate=;MetaFields=;MetaFilters=;MetaContentType=None"
+          ConnectByProxy="False">
+          <Password
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQda5v273WkW2nsALjGRW7AAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAP4SyGcEqJ7aBCoyQKnL2KAAAAAASAAACgAAAAEAAAAOhMEZHJPsbxDQXwBmjp+LgIAAAA5jsStdobd+gUAAAAhSpMW4c/5AjLGn4qgt0FBQoGIfw</Password>
+          <ClientSecret
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQda5v273WkW2nsALjGRW7AAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxQ8U8zE5M/xRqXgkxo3QFAAAAAASAAACgAAAAEAAAAGbh4B0ZWDl9cCgF1VXXt3cwAAAASJjfQArmIxH5dnZwo6tqj//j5vKzF0Nnh17l5fCYLaxISQO661rySSeyBo9jn1mKFAAAAHsKyd38jtUe8T910bm3SCTtkaVe</ClientSecret>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SchoolGrades]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{32CB448B-0F27-4EEC-A93D-3023B0A3AE28}"
+      DTS:ObjectName="SchoolGrades">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\Library\Ed-Fi API\SSIS\Sample ZappySys Integration\data\SchoolGrades.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SchoolId"
+              DTS:DTSID="{BDE421D6-4713-49B6-8627-BC58CB5529D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="namespace"
+              DTS:DTSID="{D62244AE-3B51-4630-9F3D-4BBE3AEE2632}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName=" gradeLevelDescriptor"
+              DTS:DTSID="{1BF13CA6-0D7C-4D79-9FAC-8E8652D69765}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Schools]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9E59EABF-7F82-4E3E-8223-032C5E4401EE}"
+      DTS:ObjectName="Schools">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\Library\Ed-Fi API\SSIS\Sample ZappySys Integration\data\Schools.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SchoolId"
+              DTS:DTSID="{E5894084-47F3-487F-BF24-D36EA820E945}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nameOfInstitution"
+              DTS:DTSID="{425BEC43-29ED-4F59-837F-9F510917926E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="shortNameOfInstitution"
+              DTS:DTSID="{18E669D4-589D-46DE-9F1A-CB6DC5CB27F7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Schools"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0C0ABC21-7054-4AB2-945C-DFE330CB3710}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Schools"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Schools\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input].Columns[ZS_JSON_OUT]"
+                      cachedDataType="nText"
+                      cachedName="ZS_JSON_OUT"
+                      lineageId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput].Columns[ZS_JSON_OUT]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input].Columns[ErrorMessage]"
+                      cachedDataType="nText"
+                      cachedName="ErrorMessage"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorMessage]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[json]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2048"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[json]"
+                      name="json"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput].Columns[ZS_JSON_OUT]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[errorMSG]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="2048"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[errorMSG]"
+                      name="errorMSG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorMessage]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\Derived EdOrgCatDescr"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived EdOrgCatDescr"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input].Columns[educationOrganizationCategoryDescriptor]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="educationOrganizationCategoryDescriptor"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[educationOrganizationCategoryDescriptor]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input].Columns[namespace]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="namespace"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[namespace]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Output].Columns[drvEdOrgCatDesc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="151"
+                      lineageId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Output].Columns[drvEdOrgCatDesc]"
+                      name="drvEdOrgCatDesc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[namespace]} + "#" + #{Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[educationOrganizationCategoryDescriptor]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">namespace + "#" + educationOrganizationCategoryDescriptor</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\Derived GradeLevelDescriptor"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived GradeLevelDescriptor"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input].Columns[namespace]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="namespace"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[namespace]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input].Columns[ gradeLevelDescriptor]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName=" gradeLevelDescriptor"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[ gradeLevelDescriptor]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Output].Columns[drvGradeLevelDesc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Output].Columns[drvGradeLevelDesc]"
+                      name="drvGradeLevelDesc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[namespace]} + "#" + #{Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[ gradeLevelDescriptor]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">namespace + "#" + [ gradeLevelDescriptor]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\EducationOrganizationCategory"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="EducationOrganizationCategory"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Schools\EducationOrganizationCategory.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EducationOrgCategory]"
+                  connectionManagerRefId="Package.ConnectionManagers[EducationOrgCategory]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      length="50"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      name="SchoolId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[educationOrganizationCategoryDescriptor]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[educationOrganizationCategoryDescriptor]"
+                      length="50"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[educationOrganizationCategoryDescriptor]"
+                      name="educationOrganizationCategoryDescriptor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[namespace]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[namespace]"
+                      length="100"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[namespace]"
+                      name="namespace"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SchoolId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[educationOrganizationCategoryDescriptor]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="educationOrganizationCategoryDescriptor" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].ExternalColumns[namespace]"
+                      codePage="65001"
+                      dataType="str"
+                      length="100"
+                      name="namespace" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Schools\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ErrorFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[ErrorFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumnName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="128"
+                      cachedName="ErrorColumnName"
+                      externalMetadataColumnId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumnName]"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumnName]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].Columns[json]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="json"
+                      externalMetadataColumnId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[json]"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[json]" />
+                    <inputColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].Columns[errorMSG]"
+                      cachedDataType="wstr"
+                      cachedLength="2048"
+                      cachedName="errorMSG"
+                      externalMetadataColumnId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[errorMSG]"
+                      lineageId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output].Columns[errorMSG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ZS_JSON_OUT]"
+                      dataType="nText"
+                      name="ZS_JSON_OUT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumnName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      name="ErrorColumnName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorMessage]"
+                      dataType="nText"
+                      name="ErrorMessage" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[json]"
+                      dataType="wstr"
+                      length="2048"
+                      name="json" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[errorMSG]"
+                      dataType="wstr"
+                      length="2048"
+                      name="errorMSG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load Schools\JSON Generator Transform"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="JSON Generator Transform; ZappySys LLC (c) All Rights Reserved; SSIS PowerPack; http://www.zappysys.com/support"
+              description="The JSON generator transform can be used to create JSON document from single or multiple inputs. You can create simple or nested JSON document."
+              name="JSON Generator Transform"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="LoggingMode determines how much information is logged during Package Execution. Set Logging mode to Debugging for maximum log."
+                  expressionType="Notify"
+                  name="LoggingMode"
+                  typeConverter="ZappySys.PowerPack.Common.LoggingMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you enable this property it will prefix timestamp before Log messages."
+                  expressionType="Notify"
+                  name="PrefixTimestamp">false</property>
+                <property
+                  dataType="System.Null"
+                  expressionType="Notify"
+                  name="SelfRef"
+                  typeConverter="NOTBROWSABLE" />
+                <property
+                  dataType="System.Int32"
+                  description="Determines JSON format and output mode (e.g. one JSON for all input rows or one JSON for each input row)"
+                  expressionType="Notify"
+                  name="OutputMode"
+                  typeConverter="ZappySys.PowerPack.Transform.JsonGeneratorTransform.JsonOutputMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Defines shape of output JSON string"
+                  expressionType="Notify"
+                  name="LayoutInfo">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;settings ver="3"&gt;
+  &lt;dataset id="rootSchools" main="True" inputid="76" readfrominput="True"&gt;&lt;/dataset&gt;
+  &lt;dataset id="dsSchoolGrade" inputid="104" readfrominput="True"&gt;&lt;/dataset&gt;
+  &lt;dataset id="dsEdOrgCat" inputid="131" readfrominput="True"&gt;&lt;/dataset&gt;
+  &lt;join parentid="rootSchools" childid="dsSchoolGrade"&gt;
+    &lt;key parent="SchoolId" child="SchoolId" /&gt;
+  &lt;/join&gt;
+  &lt;join parentid="rootSchools" childid="dsEdOrgCat"&gt;
+    &lt;key parent="SchoolId" child="SchoolId" /&gt;
+  &lt;/join&gt;
+  &lt;map src="SchoolId" name="SchoolId" /&gt;
+  &lt;map src="nameOfInstitution" name="nameOfInstitution" /&gt;
+  &lt;map src="shortNameOfInstitution" name="shortNameOfInstitution" /&gt;
+  &lt;map name="gradeLevels" dataset="dsSchoolGrade" parentdataset="rootSchools" maptype="DocArray"&gt;
+    &lt;map src="drvGradeLevelDesc" name="gradeLevelDescriptor" /&gt;
+  &lt;/map&gt;
+  &lt;map name="educationOrganizationCategories" dataset="dsEdOrgCat" parentdataset="rootSchools" maptype="DocArray"&gt;
+    &lt;map src="drvEdOrgCatDesc" name="educationOrganizationCategoryDescriptor" /&gt;
+  &lt;/map&gt;
+&lt;/settings&gt;</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Do not output attribute if value is NULL. By default null attribute is output as &quot;MyColname&quot; : null "
+                  expressionType="Notify"
+                  name="DoNotOutputNullAttribute">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to True if you dont want to output empty nodes of sub document (e.g nested property). This option is only applicable if you enabled DoNotOutputNullProperty. If all child peoprties are NULL for parent node then by default output contains empty nodes (e.g. CountryInfo: { CityInfo: { } } for Json --OR-- &lt;CountryInfo&gt;&lt;CityInfo /&gt;&lt;/CountryInfo&gt; for Xml). You can enable this option to avoid such empty nodes from the output."
+                  expressionType="Notify"
+                  name="DoNotOutputEmptyNestedAttribute">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to True if you dont want to output empty array nodes when no record found for that array (e.g. &quot;Orders&quot;: [ ] for JSON --OR-- &lt;Orders&gt;&lt;/Orders&gt; for Xml). You can enable this option to avoid such empty nodes from the output."
+                  expressionType="Notify"
+                  name="DoNotOutputEmptyArrayAttribute">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indent JSON Text generated by this transform (Pretty Print)"
+                  expressionType="Notify"
+                  name="IndentOutput">false</property>
+                <property
+                  dataType="System.String"
+                  description="Default output format for datetime columns"
+                  expressionType="Notify"
+                  name="DateTimeFormat">yyyy-MM-dd HH:mm:ss</property>
+                <property
+                  dataType="System.String"
+                  description="Culture setting for this task. This option is useful to control output format for certain data types (e.g. number, decimal) based on regional settings. In USA dot is used for decimal indicator but in Germany it may be comma. Leave this blank if you want to use system default settings."
+                  expressionType="Notify"
+                  name="Culture">none</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Document Header/Footer text come from upstream column rather than direct string"
+                  expressionType="Notify"
+                  name="UseColumnForHeaderFooter">false</property>
+                <property
+                  dataType="System.String"
+                  description="Header text for document (Added before each document in the output)"
+                  expressionType="Notify"
+                  name="DocumentHeader"></property>
+                <property
+                  dataType="System.String"
+                  description="Footer text for document (Added after each document in the output)"
+                  expressionType="Notify"
+                  name="DocumentFooter"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how many rows to include in each batch (Array records for single dataset array mode). 0=Include all in one batch. This setting is only valid for Mode=[Single Dataset Array]"
+                  expressionType="Notify"
+                  name="ArrayBatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies encoding for data. If you set CharacterSet property then Encoing is ignored."
+                  expressionType="Notify"
+                  name="Encoding"
+                  typeConverter="ZappySys.Common.EncodingType">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ZappySys.JsonGeneratorTransform</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput1]"
+                  name="JsonInput1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Id for attached dataset with input. Use JSON Layout Editor to see attached dataset"
+                      expressionType="Notify"
+                      name="DatasetInputId">76</property>
+                  </properties>
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput1].Columns[SchoolId]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SchoolId"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[SchoolId]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput1].Columns[nameOfInstitution]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nameOfInstitution"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[nameOfInstitution]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput1].Columns[shortNameOfInstitution]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="shortNameOfInstitution"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[shortNameOfInstitution]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput3]"
+                  name="JsonInput3">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Id for attached dataset with input. Use JSON Layout Editor to see attached dataset"
+                      expressionType="Notify"
+                      name="DatasetInputId">104</property>
+                  </properties>
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput3].Columns[SchoolId]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SchoolId"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[SchoolId]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput3].Columns[drvGradeLevelDesc]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="drvGradeLevelDesc"
+                      lineageId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Output].Columns[drvGradeLevelDesc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2]"
+                  name="JsonInput2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Id for attached dataset with input. Use JSON Layout Editor to see attached dataset"
+                      expressionType="Notify"
+                      name="DatasetInputId">131</property>
+                  </properties>
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2].Columns[SchoolId]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SchoolId"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[SchoolId]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2].Columns[educationOrganizationCategoryDescriptor]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="educationOrganizationCategoryDescriptor"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[educationOrganizationCategoryDescriptor]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2].Columns[namespace]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="namespace"
+                      lineageId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output].Columns[namespace]" />
+                    <inputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2].Columns[drvEdOrgCatDesc]"
+                      cachedDataType="wstr"
+                      cachedLength="151"
+                      cachedName="drvEdOrgCatDesc"
+                      lineageId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Output].Columns[drvEdOrgCatDesc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput4]"
+                  name="JsonInput4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput]"
+                  errorOrTruncationOperation="Error"
+                  name="JsonGeneratorTransformOutput">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput].Columns[ZS_JSON_OUT]"
+                      dataType="nText"
+                      description="This output column contains generated JSON string from JSON generator Transform"
+                      lineageId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput].Columns[ZS_JSON_OUT]"
+                      name="ZS_JSON_OUT" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\School"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="School"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Schools\School.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Schools]"
+                  connectionManagerRefId="Package.ConnectionManagers[Schools]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\School.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      length="50"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      name="SchoolId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[nameOfInstitution]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[nameOfInstitution]"
+                      length="50"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[nameOfInstitution]"
+                      name="nameOfInstitution"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[shortNameOfInstitution]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[shortNameOfInstitution]"
+                      length="50"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Output].Columns[shortNameOfInstitution]"
+                      name="shortNameOfInstitution"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SchoolId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[nameOfInstitution]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="nameOfInstitution" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Output].ExternalColumns[shortNameOfInstitution]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="shortNameOfInstitution" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Schools\School.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\School.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\School Grade Levels"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="School Grade Levels"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Schools\School Grade Levels.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SchoolGrades]"
+                  connectionManagerRefId="Package.ConnectionManagers[SchoolGrades]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      length="50"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[SchoolId]"
+                      name="SchoolId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[namespace]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[namespace]"
+                      length="50"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[namespace]"
+                      name="namespace"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[ gradeLevelDescriptor]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[ gradeLevelDescriptor]"
+                      length="50"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].Columns[ gradeLevelDescriptor]"
+                      name=" gradeLevelDescriptor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[SchoolId]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="SchoolId" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[namespace]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="namespace" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output].ExternalColumns[ gradeLevelDescriptor]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name=" gradeLevelDescriptor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Schools\Web API Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Web API Destination; ZappySys LLC (c) All Rights Reserved; SSIS PowerPack; http://www.zappysys.com/support"
+              description="The Web API destination can be used to send data to Web API URL (e.g. Submit or POST data to REST API/SOAP or other HTTP/HTTPS endpoints)"
+              name="Web API Destination"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="LoggingMode determines how much information is logged during Package Execution. Set Logging mode to Debugging for maximum log."
+                  expressionType="Notify"
+                  name="LoggingMode"
+                  typeConverter="ZappySys.PowerPack.Common.LoggingMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you enable this property it will prefix timestamp before Log messages."
+                  expressionType="Notify"
+                  name="PrefixTimestamp">false</property>
+                <property
+                  dataType="System.Null"
+                  expressionType="Notify"
+                  name="SelfRef"
+                  typeConverter="NOTBROWSABLE" />
+                <property
+                  dataType="System.String"
+                  description="API URL you like to call"
+                  expressionType="Notify"
+                  name="HttpRequestUrl">http://localhost:54746/data/v3/ed-fi/schools</property>
+                <property
+                  dataType="System.String"
+                  description="Http Web Request Method (e.g. POST, GET, PUT, LIST, DELETE...). Refer your API documentation if you are not sure which method you have to use."
+                  expressionType="Notify"
+                  name="HttpRequestMethod">POST</property>
+                <property
+                  dataType="System.String"
+                  description="Set this if you want to set custom Http headers. You may use variable anywhere in the header value using syntax {{User::YourVarName}}. Syntax of Header key value pair is : &amp;lt;request&amp;gt;&amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-1&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;AAA&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt; &amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-2&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;BBB&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt;&amp;lt;/request&amp;gt;"
+                  expressionType="Notify"
+                  name="HttpHeaders"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">&lt;request&gt;&lt;header&gt;&lt;name&gt;Accept&lt;/name&gt;&lt;value&gt;*/*&lt;/value&gt;&lt;/header&gt;&lt;header&gt;&lt;name&gt;Cache-Control&lt;/name&gt;&lt;value&gt;no-cache&lt;/value&gt;&lt;/header&gt;&lt;/request&gt;</property>
+                <property
+                  dataType="System.String"
+                  description="User defined data you wish to send along with your HTTP Request (e.g. Upload file data, Form POST data). Usually you have to set content-type of your data but if you select RequestMethod=POST then system will automatically set content-type=application/x-www-form-urlencoded."
+                  expressionType="Notify"
+                  name="HttpRequestData"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies content type for data you wish to POST. If you select Default option then system default content type will be used (i.e. application/x-www-form-urlencoded). If you specify Content-Type header along with this option then header value takes precedence."
+                  expressionType="Notify"
+                  name="HttpRequestContentType"
+                  typeConverter="ZappySys.Common.Web.HttpRequestContentType">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If this option is true then component will continue without exception on 404 error (Url not found). This allows you to consume data gracefully."
+                  expressionType="Notify"
+                  name="ContinueOnUrlNotFoundError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true to disable Expect 100-continue negotiation for POST requests (or any requests with BODY). By default client waits for server response for POST request (this is done via Expect: 100-continue header in POST request). Disable this option to improve response time significantly in some cases (Disabling this option is not recommended for larger POST requests- i.e. File Upload)"
+                  expressionType="Notify"
+                  name="DisableExpect100Continue">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Ignore SSL certificate related errors. Example: if you getting SSL/TLS errors because of certificate expired or certificate is not from trusted authority or certificate is self-signed. By checking this option you will not get SSL/TLS error."
+                  expressionType="Notify"
+                  name="IgnoreCertificateErrors">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Allow unsecure ciphers/suites and curves for SSLS/TLS communication. Use this option to communicate with web servers which needs legacy / unsecured ciphers support. This option is only trigged when you change default SSL/TLS Version on advanced settings tab."
+                  expressionType="Notify"
+                  name="AllowUnsecureSuite">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable support for gzip or deflate compression (for deflate you must turn on [Tls 1.0 Or Higher] Option on Advanced Settings - Security Protocol for HTTPS). When you check this option compressed response automatically de-compressed saving bandwidth. This option is only valid if web server supports compressed response stream. Check your API documentation for more information."
+                  expressionType="Notify"
+                  name="EnableCompressionSupport">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies which security protocol is supported for HTTPS communication. Using this option you can enable legacy protocol or enforce to use latest version of security protocol (Note: TLS 1.2 is only supported in SSIS 2014 or Higher)."
+                  expressionType="Notify"
+                  name="SecurityProtocol"
+                  typeConverter="ZappySys.PowerPack.Common.HttpsSecurityProtocolType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Wait time in milliseconds (Pause after each request). 0=No wait. Use this delay time if your API has limit on how many requests you can make in certain time frame."
+                  expressionType="Notify"
+                  name="WaitTime">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you redirect error to error output by default you get additional information in ErrorMessage column. Check this option if you need exact Response Body (Useful if its in JSON/XML format which needs to be parsed for additional information for later step)."
+                  expressionType="Notify"
+                  name="OnErrorOutputResponseBody">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable multiple requests using parallel threads."
+                  expressionType="Notify"
+                  name="EnableParallelRequests">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum parallel threads to use for processing multiple web requests."
+                  expressionType="Notify"
+                  name="MaxParallelThreads">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="By default one request is sent for each input row. If your API supports multiple records in a single call via HTTP Body then enable this setting. See also BodyBatchSize, BodyHeader, BodyFooter and BodyRowSeparator property."
+                  expressionType="Notify"
+                  name="EnableBodyBatch">false</property>
+                <property
+                  dataType="System.String"
+                  description="When you have to wrap input content between opening and closing tags for each call then set this property to specify opening for body content. For Example if you want to build Body like this (send max 100 rows per call) ==&gt; { records : [ {...}, {...}, {...} ] } then you can set BatchSize=100, BodyHeader as &quot;{ records: [&quot; , BodyFooter as &quot;] }&quot; and BodyRowSeperator as comma {,}. This property is ignored if EnableBodyBatch=false."
+                  expressionType="Notify"
+                  name="BodyHeader"></property>
+                <property
+                  dataType="System.String"
+                  description="When you have to wrap input content between opening and closing tags for each call then set this property to specify closing for body content. For Example if you want to build Body like this (send max 100 rows per call) ==&gt; { records : [ {...}, {...}, {...} ] } then you can set BatchSize=100, BodyHeader as &quot;{ records: [&quot; , BodyFooter as &quot;] }&quot; and BodyRowSeperator as comma {,}. This property is ignored if EnableBodyBatch=false."
+                  expressionType="Notify"
+                  name="BodyFooter"></property>
+                <property
+                  dataType="System.Int32"
+                  description="If your API supports multiple records via HTTP Body then change this setting &gt; 1 to include multiple upstream records into single call. See also BodyHeader, BodyFooter and BodyRowSeparator property. This property is ignored if EnableBodyBatch=false."
+                  expressionType="Notify"
+                  name="BodyBatchSize">100</property>
+                <property
+                  dataType="System.String"
+                  description="When you submit multiple rows in a batch you can separate multiple documents / records using custom separator (e.g. in JSON Array you can use comma {,} as record separator if POST document is in array format [ {...}, {...}, {...} ] ). For last row of batch blank separator is used."
+                  expressionType="Notify"
+                  name="BodyRowSeparator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Returns response data as binary data (e.g. Byte Array). Check this option is response is Zip file, Image file or any non text data which needs to be exported as raw data without any encoding."
+                  expressionType="Notify"
+                  name="TreatResponseAsBinary">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Check this option if you want to upload file(s) (i.e. POST RAW file data) or send data using Multi-Part encoding method (i.e. Content-Type: multipart/form-data). Multi-Part request allows you to mix key/value and upload files in same request. On the other hand raw upload allows only single file upload (without any key/value) &#xA;&#xA;==== Raw Upload (Content-Type: application/octet-stream) =====   &#xA;To upload single file in raw mode check this option and specify full file path starting with @ sign in the Body (e.g.  @c:\data\myfile.zip ) &#xA;&#xA;==== Form-Data / Multipart Upload (Content-Type: multipart/form-data) =====   &#xA;To treat your Request data as multi part fields you must specify key/value pairs separated by new lines into RequestData field (i.e. Body). Each key value pair is entered on new-line and key/value are separated using equal sign (=). Preceding and trailing spaces are ignored also blank lines are ignored. &#xA;If field value has some any special character(s) then use escape sequence (e.g. For NewLine: \r\n, For Tab: \t, For at (@): \@). When value of any field starts with at sign (@) its automatically treated as File you want to upload. By default file content type is determined based on extension however you can supply content type manually for any field using this way [ YourFileFieldName.Content-Type=some-content-type ]. By default File Upload Field always includes Content-Type in the request (non file fields do not have content-type by default unless you supply manually). For some reason if you dont want to use Content-Type header in your request then supply blank Content-Type to exclude this header altogather [e.g. SomeFieldName.Content-Type= ]. In below example we have supplied Content-Type for file2 and SomeField1, all other fields are using default content-type.&#xA;See below Example of uploading multiple files along with additional fields. If some API requires you to pass Content-Type: multipart/form-data rather than multipart/form-data then manually set Request Header =&gt; Content-Type: multipart/mixed (it must starts with multipart/ else will be ignored). &#xA;&#xA;file1=@c:\data\Myfile1.txt&#xA;file2=@c:\data\Myfile2.json&#xA;file2.Content-Type=application/json&#xA;SomeField1=aaaaaaa&#xA;SomeField1.Content-Type=text/plain&#xA;SomeField2=12345&#xA;SomeFieldWithNewLineAndTab=This is line1\r\nThis is line2\r\nThis is \ttab \ttab \ttab&#xA;SomeFieldStartingWithAtSign=\@MyTwitterHandle&#xA;"
+                  expressionType="Notify"
+                  name="IsMultiPartUpload">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable this option if your server is expecting &#xA; (i.e. CRLF) after last Multi-Part boundary in the Body. This option is only applicable if you enabled IsMultiPartUpload and sending data in Key=value format (i.e. Mutipart). For raw file upload this option has no effect."
+                  expressionType="Notify"
+                  name="AddMultiPartPostamble">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable this option if you like to compress request body (i.e. Content-Encoding: gzip). Enabling this option can speedup data transfer especially when you are sending large amount data (i.e. Upload file)"
+                  expressionType="Notify"
+                  name="EnableRequestCompression">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ZappySys.WebApiDestination</property>
+                <property
+                  dataType="System.String"
+                  name="MultiPartBoundary"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Schools\Web API Destination.Connections[Connection]"
+                  connectionManagerID="Package.ConnectionManagers[OAuth 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[OAuth 1]"
+                  description="Connection manager for authentication (e.g. HTTP or OAuth Connection)"
+                  name="Connection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput]"
+                  errorRowDisposition="RedirectRow"
+                  hasSideEffects="true"
+                  name="WebApiDestinationInput"
+                  truncationRowDisposition="RedirectRow">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput].Columns[ZS_JSON_OUT]"
+                      cachedDataType="nText"
+                      cachedName="ZS_JSON_OUT"
+                      externalMetadataColumnId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput].ExternalColumns[HttpRequestData]"
+                      lineageId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput].Columns[ZS_JSON_OUT]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput].ExternalColumns[HttpRequestUrl]"
+                      dataType="wstr"
+                      length="2000"
+                      name="HttpRequestUrl" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput].ExternalColumns[HttpRequestData]"
+                      dataType="nText"
+                      name="HttpRequestData" />
+                    <externalMetadataColumn
+                      refId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput].ExternalColumns[HttpHeaders]"
+                      dataType="wstr"
+                      length="2000"
+                      name="HttpHeaders" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="WebApiDestination Error Output"
+                  synchronousInputId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumnName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorColumnName]"
+                      name="ErrorColumnName" />
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorMessage]"
+                      dataType="nText"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Schools\Web API Destination.Outputs[Response Output]"
+                  exclusionGroup="1"
+                  name="Response Output"
+                  synchronousInputId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[Response Output].Columns[ResponseText]"
+                      dataType="nText"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[Response Output].Columns[ResponseText]"
+                      name="ResponseText" />
+                    <outputColumn
+                      refId="Package\Load Schools\Web API Destination.Outputs[Response Output].Columns[StatusCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Schools\Web API Destination.Outputs[Response Output].Columns[StatusCode]"
+                      name="StatusCode" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Schools.Paths[Data Conversion Output]"
+              endId="Package\Load Schools\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Schools\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Schools.Paths[Derived Column Output]"
+              endId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput3]"
+              name="Derived Column Output"
+              startId="Package\Load Schools\Derived GradeLevelDescriptor.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Schools.Paths[Derived Column Output1]"
+              endId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput2]"
+              name="Derived Column Output"
+              startId="Package\Load Schools\Derived EdOrgCatDescr.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Schools.Paths[Flat File Source Output]"
+              endId="Package\Load Schools\JSON Generator Transform.Inputs[JsonInput1]"
+              name="Flat File Source Output"
+              startId="Package\Load Schools\School.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Schools.Paths[Flat File Source Output1]"
+              endId="Package\Load Schools\Derived EdOrgCatDescr.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Schools\EducationOrganizationCategory.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Schools.Paths[Flat File Source Output2]"
+              endId="Package\Load Schools\Derived GradeLevelDescriptor.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Schools\School Grade Levels.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Schools.Paths[JsonGeneratorTransformOutput]"
+              endId="Package\Load Schools\Web API Destination.Inputs[WebApiDestinationInput]"
+              name="JsonGeneratorTransformOutput"
+              startId="Package\Load Schools\JSON Generator Transform.Outputs[JsonGeneratorTransformOutput]" />
+            <path
+              refId="Package\Load Schools.Paths[WebApiDestination Error Output]"
+              endId="Package\Load Schools\Data Conversion.Inputs[Data Conversion Input]"
+              name="WebApiDestination Error Output"
+              startId="Package\Load Schools\Web API Destination.Outputs[WebApiDestination Error Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="145.142857142858,42.2857142857143"
+          Id="Package\Load Schools"
+          TopLeft="151.111108358996,79.772722842095" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Schools">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="196.571428571429,42.2857142857143"
+          Id="Package\Load Schools\Derived EdOrgCatDescr"
+          TopLeft="371.111104352239,280.681802592557" />
+        <NodeLayout
+          Size="179.428571428572,42.2857142857143"
+          Id="Package\Load Schools\Web API Destination"
+          TopLeft="953.333315970723,194.409080111476" />
+        <NodeLayout
+          Size="180,42.2857142857143"
+          Id="Package\Load Schools\School Grade Levels"
+          TopLeft="50.555554634811,135.909083360606" />
+        <NodeLayout
+          Size="225.714285714286,42.2857142857143"
+          Id="Package\Load Schools\Derived GradeLevelDescriptor"
+          TopLeft="331.11110508074,176.090899310699" />
+        <NodeLayout
+          Size="212.571428571429,42.2857142857143"
+          Id="Package\Load Schools\JSON Generator Transform"
+          TopLeft="609.44443334492,194.409080111476" />
+        <NodeLayout
+          Size="112.571428571429,42.2857142857143"
+          Id="Package\Load Schools\School"
+          TopLeft="58.3333322709357,43.7272702986299" />
+        <NodeLayout
+          Size="233.714285714286,42.2857142857143"
+          Id="Package\Load Schools\EducationOrganizationCategory"
+          TopLeft="67.7777765433729,274.772712011661" />
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[JsonGeneratorTransformOutput]"
+          TopLeft="822.015861916348,215.551937254333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131.317454054374,0"
+              Start="0,0"
+              End="123.817454054374,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="123.817454054374,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Flat File Source Output2]"
+          TopLeft="230.555554634811,157.051940503463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.555550445929,40.1818159500923"
+              Start="0,0"
+              End="93.0555504459293,40.1818159500923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.2777752229646,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.2777752229646,0"
+                    Point2="50.2777752229646,0"
+                    Point3="50.2777752229646,4" />
+                  <mssgle:LineSegment
+                    End="50.2777752229646,36.1818159500923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.2777752229646,36.1818159500923"
+                    Point2="50.2777752229646,40.1818159500923"
+                    Point3="54.2777752229646,40.1818159500923" />
+                  <mssgle:LineSegment
+                    End="93.0555504459293,40.1818159500923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Flat File Source Output1]"
+          TopLeft="301.492062257659,298.870114444966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.6190420945804,0"
+              Start="0,0"
+              End="62.1190420945804,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.1190420945804,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Flat File Source Output]"
+          TopLeft="114.61904655665,86.0129845843441">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="601.111101073984,108.396095527132"
+              Start="0,0"
+              End="601.111101073984,100.896095527132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-2.66558521966211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-2.66558521966211"
+                    Point2="0,-6.66558521966211"
+                    Point3="4,-6.66558521966211" />
+                  <mssgle:LineSegment
+                    End="597.111101073984,-6.66558521966211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="597.111101073984,-6.66558521966211"
+                    Point2="601.111101073984,-6.66558521966211"
+                    Point3="601.111101073984,-2.66558521966211" />
+                  <mssgle:LineSegment
+                    End="601.111101073984,100.896095527132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Derived Column Output1]"
+          TopLeft="469.396818637953,280.681802592557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="246.333328992681,-43.9870081953665"
+              Start="0,0"
+              End="246.333328992681,-36.4870081953665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-17.9935040976832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-17.9935040976832"
+                    Point2="0,-21.9935040976832"
+                    Point3="4,-21.9935040976832" />
+                  <mssgle:LineSegment
+                    End="242.333328992681,-21.9935040976832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="242.333328992681,-21.9935040976832"
+                    Point2="246.333328992681,-21.9935040976832"
+                    Point3="246.333328992681,-25.9935040976832" />
+                  <mssgle:LineSegment
+                    End="246.333328992681,-36.4870081953665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Derived Column Output]"
+          TopLeft="556.825390795026,197.233756453556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.6190425498938,18.3181808007774"
+              Start="0,0"
+              End="45.1190425498938,18.3181808007774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.3095212749469,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.3095212749469,0"
+                    Point2="26.3095212749469,0"
+                    Point3="26.3095212749469,4" />
+                  <mssgle:LineSegment
+                    End="26.3095212749469,14.3181808007774" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.3095212749469,14.3181808007774"
+                    Point2="26.3095212749469,18.3181808007774"
+                    Point3="30.3095212749469,18.3181808007774" />
+                  <mssgle:LineSegment
+                    End="45.1190425498938,18.3181808007774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160,42.2857142857143"
+          Id="Package\Load Schools\Data Conversion"
+          TopLeft="1021.1110925141,316.727255136022" />
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[WebApiDestination Error Output]"
+          TopLeft="1043.04760168501,236.69479439719">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.0634908290865,80.0324607388314"
+              Start="0,0"
+              End="58.0634908290865,72.5324607388314">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.0162303694157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.0162303694157"
+                    Point2="0,40.0162303694157"
+                    Point3="4,40.0162303694157" />
+                  <mssgle:LineSegment
+                    End="54.0634908290865,40.0162303694157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.0634908290865,40.0162303694157"
+                    Point2="58.0634908290865,40.0162303694157"
+                    Point3="58.0634908290865,44.0162303694157" />
+                  <mssgle:LineSegment
+                    End="58.0634908290865,72.5324607388314" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-42.7898170854567,45.0162303694157,143.643125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175.428571428572,42.2857142857143"
+          Id="Package\Load Schools\Flat File Destination"
+          TopLeft="857.777762155475,428.999976173044" />
+        <EdgeLayout
+          Id="Package\Load Schools.Paths[Data Conversion Output]"
+          TopLeft="1101.1110925141,359.012969421736">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-155.619044644335,69.9870067513083"
+              Start="0,0"
+              End="-155.619044644335,62.4870067513083">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9935033756541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.9935033756541"
+                    Point2="0,34.9935033756541"
+                    Point3="-4,34.9935033756541" />
+                  <mssgle:LineSegment
+                    End="-151.619044644335,34.9935033756541" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-151.619044644335,34.9935033756541"
+                    Point2="-155.619044644335,34.9935033756541"
+                    Point3="-155.619044644335,38.9935033756541" />
+                  <mssgle:LineSegment
+                    End="-155.619044644335,62.4870067513083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
