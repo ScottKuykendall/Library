@@ -25,5 +25,8 @@
 ################################################################################################################################################################
 This SSIS package demonstrates the use of the zappysys (https://zappysys.com/) PowerPack SSIS components to build json and post it to an Ed-Fi API endpoint.
 
-To run the demo, you must install the SSIS PowerPack developer tools sample and an Ed-Fi API.  The out of box Ed-Fi sandbox development build version 7.3 was used to build the sample.
+To run the demo, you must install the SSIS PowerPack developer tools sample and an Ed-Fi API.  The out of box Ed-Fi sandbox development build version 7.3 was used to build the test ETL.
+
+It was built using Visual Studio 2022 and SQ Server Integration Services Project.
+
 
